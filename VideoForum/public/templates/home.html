@@ -1,0 +1,39 @@
+<div class="container">
+<div class="row">
+    <h1 class="text-center">Welcome to our Video Forum. Here you can share and comment anything related to programming.</h1>
+</div>
+    <hr>
+    <div class="row">
+        <h3>The last 10 posts</h3>
+        <div class="col-md-12">
+            {{#data.result}}
+            <div class="row panel panel-default">
+                <div class="panel-body">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" src="{{Url}}"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <div class="caption">
+                            <h4><a href="#/posts/{{Id}}">{{Title}}</a></h4>
+                            <p>{{Content}}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-lg-2 col-md-2">
+                        <div class="row well well-sm text-center">
+                            <h4>Rating</h4>
+                            <div ><span class="badge">{{Rating}}</span></div>
+                        </div>
+                        <div class="row well well-sm text-center">
+                            <h4>Comments</h4>
+                            <div ><span class="badge">{{Messages.length}}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/data.result}}
+        </div>
+    </div>
+</div>

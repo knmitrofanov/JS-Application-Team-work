@@ -1,0 +1,14 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.fa-thumbs-o-up:hover {
+    color: green;
+}
+.fa-thumbs-o-down:hover {
+    color: red;
+}
+
+footer {
+    margin: 50px 0;
+}

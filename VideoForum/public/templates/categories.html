@@ -1,0 +1,12 @@
+<div id="categories-container">
+    <h2>Categories:</h2>
+    <div>
+        <ul id="categories-list" class="list-group">
+            {{#each data.result}}
+            <li class="list-group-item">
+                <span class="badge"><a href="#/categories/{{id}}">{{title}}</a></span>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="panel-body">
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <!-- 4:3 aspect ratio -->
+                <div class="embed-responsive embed-responsive-4by3">
+                    <iframe class="embed-responsive-item" src="{{data.result.Url}}"></iframe>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-6 col-md-6">
+                <div class="caption">
+                    <h4>{{data.result.Title}}</h4>
+                    <p>{{data.result.Content}}</p>
+                </div>
+            </div>
+            <div class="col-sm-2 col-lg-2 col-md-2">
+                <div class="row well well-lg text-center">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <i class="fa fa-thumbs-o-up fa-lg like" aria-hidden="true" post-id="{{data.result.Id}}"></i>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <i class="fa fa-thumbs-o-down fa-lg dislike" aria-hidden="true" post-id="{{data.result.Id}}"></i>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <span class="badge">{{data.result.Rating}}</span>
+                    </div>
+                </div>
+                <div class="row well well-lg  text-center">
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <h4>Users</h4> {{#data.result.Messages}}
+                        <p class="comment">
+                            <a href="#">{{Username}}</a>
+                        </p>
+                        {{/data.result.Messages}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {{#if data.result.Messages.length}}
+        <h4>Comments</h4> {{#data.result.Messages}}
+        <div>
+            <a href="#">{{Username}} writes: </a>
+            <span>{{Content}}</span>
+        </div>
+        <hr> {{/data.result.Messages}} {{/if}}
+        <div class="container">
+            <h1 class="well">Add Comment</h1>
+            <div class="col-lg-12 well">
+                <div class="row">
+                    <form>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Content:</label>
+                                    <textarea rows="10" cols="10" id="content-comment" placeholder="Content" class="form-control">
+                                    </textarea>
+                                </div>
+                            </div>
+                            <button id="btn-add-comment" type="button" class="btn btn-lg btn-info">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
